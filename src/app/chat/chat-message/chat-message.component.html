@@ -1,0 +1,105 @@
+<!-- <li class="right ng-star-inserted"> -->
+
+  <li [ngClass]="{
+    'right ng-star-inserted':message.direction === 'out',
+    'ng-star-inserted':message.direction === 'in' 
+  }"> 
+
+  <div class="conversation-list ng-star-inserted">
+    <div class="chat-avatar"><img alt="" src="assets/img/avatar.jpg"></div>
+    <div class="user-chat-content">
+      <div class="ctext-wrap">
+        <div class="ctext-wrap-content">                        
+          <i class="fa fa-alarm-clock fa-2x"></i>
+
+            <div class="chat-message-image-wrapper" *ngIf="imageLink">
+              <img class="chat-message-image" [src]="imageLink"/>
+            </div>
+          <p class="mb-0">
+            <!-- {{message.message}}     -->
+            <span lunnaChatLinks="{{message.message}}"></span>       
+          </p> 
+          <p class="chat-time mb-0 ng-star-inserted">                           
+              <i class="fa fa-alarm-clock fa-2x"></i>
+            <span  class="badge-primary">
+              <i class="fa fa-alarm-clock fa-2x"></i>
+            </span>
+            <span class="fa fa-clock">{{message.createdAt}}</span>
+            <small title="{{nick}}" class="chat-message-name">
+              {{nick}}
+              <ng-container *ngIf="message.direction === 'out'" [ngSwitch]="getMessageState()">
+                  <ng-container *ngSwitchCase="MessageState.SENT">✓</ng-container>
+                  <ng-container *ngSwitchCase="MessageState.RECIPIENT_RECEIVED">✓✓</ng-container>
+                  <ng-container *ngSwitchCase="MessageState.RECIPIENT_SEEN"><span class="state--seen">✓✓</span></ng-container>
+              </ng-container>
+          </small>
+          </p>
+          <!---->
+        </div>
+        <div ngbDropdown class="dropdown"  class="align-self-start dropdown">
+          <button class="btn" id="dropdownmsg" ngbDropdownToggle>
+            <!-- <i class=" ri-more-2-line "></i> -->
+            <i class="fa fa-ellipsis-v"></i>
+          </button>
+          <div ngbDropdownMenu class="dropdown-menu dropdown-menu-left" x-placement="bottom-left">                       
+            <a href="javascript: void(0);" class="dropdown-item">Copy <i class="ri-file-copy-line float-right text-muted"></i></a>
+            <a href="javascript: void(0);" class="dropdown-item">Save <i class="ri-save-line float-right text-muted"></i></a>
+            <a href="javascript: void(0);" class="dropdown-item">Forward <i class="ri-chat-forward-line float-right text-muted"></i></a>
+            <a href="javascript: void(0);" class="dropdown-item">Delete <i class="ri-delete-bin-line float-right text-muted"></i></a>
+          </div>
+        </div>
+      </div>
+      <!---->
+
+      <div class="conversation-name"  *ngIf="message.direction === 'in'">{{contact.displayName}}</div>
+
+    </div>
+  </div>
+</li>
+
+
+  <!-- <li class="right ng-star-inserted">
+    <div class="conversation-list ng-star-inserted">
+      <div class="chat-avatar"><img alt=""
+          src="assets/img/avatar.jpg"></div>
+      <div class="user-chat-content">
+        <div class="ctext-wrap">
+          <div class="ctext-wrap-content">
+            <p class="mb-0"> Good morning, How are you? What about our next meeting?
+              
+            </p>
+            
+            
+            <p class="chat-time mb-0 ng-star-inserted">
+              <i class="fa fa-clock fa-1x"></i>
+                <span  class="align-middle">10:02</span></p>
+                <small title="in" class="chat-message-name">
+                
+                  <ng-container >
+                      <ng-container >✓✓✓</ng-container>
+                  </ng-container>
+              </small>
+            
+          </div>
+          <div ngbdropdown="" class="align-self-start dropdown"><a
+              href="#" role="button" ngbdropdowntoggle="" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i 
+                class="fa fa-ellipse-v fa-1x"></i></a>
+            <div ngbdropdownmenu="" class="dropdown-menu" x-placement="bottom-left">
+              <a href="#" class="dropdown-item">Copy <i 
+                  class="ri-file-copy-line float-right text-muted"></i></a><a 
+                href="#" class="dropdown-item">Save <i 
+                  class="ri-save-line float-right text-muted"></i></a><a href="#"
+                class="dropdown-item">Forward <i 
+                  class="ri-chat-forward-line float-right text-muted"></i></a><a 
+                href="#" class="dropdown-item">Delete <i 
+                  class="ri-delete-bin-line float-right text-muted"></i></a></div>
+          </div>
+        </div>
+        
+        <div class="conversation-name">Patricia Smith</div>
+      </div>
+    </div>
+    
+    
+  </li> -->

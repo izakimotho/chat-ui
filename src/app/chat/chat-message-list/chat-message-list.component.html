@@ -1,0 +1,533 @@
+
+<div class="chat-messages" #messageArea>
+  <perfect-scrollbar class="chat-conversation p-3 p-lg-4">
+    <div style="position: static;" class="ps ps--active-y">
+      <div class="ps-content">
+
+        <ul class="list-unstyled mb-0">
+            <li class="ng-star-inserted"  *ngFor="let dateMessagesGroup of contact.dateMessagesGroups ">
+              <!-- <li class="ng-star-inserted"  *ngFor="let dateMessagesGroup of contact.dateMessagesGroups | orderBy : dateMessagesGroup.createdAT: Asc"></li> -->
+               
+
+              <!-- <app-chat-message></app-chat-message> -->
+
+              <app-chat-message *ngFor="let message of dateMessagesGroup.messages  "
+                          [nick]="message.direction === Direction.in ? contact.displayName : ''"
+                          [avatar]="contact.avatar"
+                          [message]="message"
+                          [contact]="contact"
+                          [showAvatars]="showAvatars">
+              </app-chat-message>
+              
+            </li>
+            <li class="ng-star-inserted">
+              
+              <div class="chat-day-title ng-star-inserted"><span 
+                  class="title">Today</span></div>
+              
+            </li>
+            <li class="ng-star-inserted">
+              <div class="conversation-list ng-star-inserted">
+                <div class="chat-avatar"><img alt=""
+                    src="assets/img/avatar.jpg"></div>
+                <div class="user-chat-content">
+                  <div class="ctext-wrap">
+                    <div class="ctext-wrap-content">
+                      <p class="mb-0"> 
+                        Yeah everything is fine.The chat-app is working Lunna Way                        
+                      </p>   
+                      <p class="chat-time mb-0 ng-star-inserted"><i 
+                          class="ri-time-line align-middle"></i>
+                          <span class="align-middle">10:05</span>
+                      </p>
+                      
+                    </div>
+
+                    <div ngbDropdown class="dropdown"  class="align-self-start dropdown">
+                      <button class="btn" id="dropdownmsg" ngbDropdownToggle>
+                        <!-- <i class=" ri-more-2-line "></i> -->
+                        <i class="fa fa-ellipsis-v"></i>
+                      </button>
+                      <div ngbDropdownMenu class="dropdown-menu dropdown-menu-left" x-placement="bottom-left">                       
+                        <a href="javascript: void(0);" class="dropdown-item">Copy <i class="ri-file-copy-line float-right text-muted"></i></a>
+                        <a href="javascript: void(0);" class="dropdown-item">Save <i class="ri-save-line float-right text-muted"></i></a>
+                        <a href="javascript: void(0);" class="dropdown-item">Forward <i class="ri-chat-forward-line float-right text-muted"></i></a>
+                        <a href="javascript: void(0);" class="dropdown-item">Delete <i class="ri-delete-bin-line float-right text-muted"></i></a>
+                      </div>
+                    </div>
+
+                    
+                    <!-- <div ngbdropdown="" class="align-self-start dropdown"><a
+                        href="#" role="button" ngbdropdowntoggle="" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i 
+                          class="ri-more-2-fill"></i></a>
+                      <div ngbdropdownmenu="" class="dropdown-menu" x-placement="bottom-left">
+                        <a href="#" class="dropdown-item">Copy <i 
+                            class="ri-file-copy-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Save <i 
+                            class="ri-save-line float-right text-muted"></i></a><a href="#"
+                          class="dropdown-item">Forward <i 
+                            class="ri-chat-forward-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Delete <i 
+                            class="ri-delete-bin-line float-right text-muted"></i></a>
+                          
+                          </div>
+                    </div> -->
+
+
+                  </div>
+                  <div class="ctext-wrap ng-star-inserted">
+                    <div class="ctext-wrap-content">
+                      <p class="mb-0"> &amp; Next Lunna meeting tomorrow 10.00AM </p>
+                      <p class="chat-time mb-0"><i 
+                          class="ri-time-line align-middle"></i><span 
+                          class="align-middle">10:05</span></p>
+                    </div> 
+                    <div ngbDropdown class="dropdown"  class="align-self-start dropdown">
+                      <button class="btn" id="dropdownmsg" ngbDropdownToggle>
+                        <!-- <i class=" ri-more-2-line "></i> -->
+                        <i class="fa fa-ellipsis-v"></i>
+                      </button>
+                      <div ngbDropdownMenu class="dropdown-menu dropdown-menu-left" x-placement="bottom-left">                       
+                        <a href="javascript: void(0);" class="dropdown-item">Copy <i class="ri-file-copy-line float-right text-muted"></i></a>
+                        <a href="javascript: void(0);" class="dropdown-item">Save <i class="ri-save-line float-right text-muted"></i></a>
+                        <a href="javascript: void(0);" class="dropdown-item">Forward <i class="ri-chat-forward-line float-right text-muted"></i></a>
+                        <a href="javascript: void(0);" class="dropdown-item">Delete <i class="ri-delete-bin-line float-right text-muted"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="conversation-name">George O.</div>
+                </div>
+              </div>
+              
+              
+            </li>
+            <!-- 
+              <li class="ng-star-inserted" >
+              <div class="conversation-list ng-star-inserted">
+                <div class="chat-avatar"><img alt="" src="assets/img/avatar.jpg"></div>
+                <div class="user-chat-content">
+                  <div class="ctext-wrap">
+                    <div class="ctext-wrap-content">                        
+                      <i class="fa fa-alarm-clock fa-2x"></i>
+                      <p class="mb-0"> 
+                        Good Morning
+                      </p>
+                      <p class="chat-time mb-0 ng-star-inserted">                           
+                          <i class="fa fa-alarm-clock fa-2x"></i>
+                        <span  class="badge-primary">
+                          <i class="fa fa-alarm-clock fa-2x"></i>
+                        </span>
+                        <span class="fa fa-clock">10:00</span>
+                        <small title="in" class="chat-message-name">                          
+                          <ng-container >
+                              <ng-container >✓</ng-container>
+                          </ng-container>
+                      </small>
+                      </p>
+                    </div>
+                    <div ngbdropdown="" class="align-self-start dropdown"><a
+                        href="#" role="button" ngbdropdowntoggle="" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i 
+                          class="fa fa-chevron-down"></i></a>
+                      <div ngbdropdownmenu="" class="dropdown-menu" x-placement="bottom-left">
+                        <a href="#" class="dropdown-item">Copy <i 
+                            class="ri-file-copy-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Save <i 
+                            class="ri-save-line float-right text-muted"></i></a><a href="#"
+                          class="dropdown-item">Forward <i 
+                            class="ri-chat-forward-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Delete <i 
+                            class="ri-delete-bin-line float-right text-muted"></i></a></div>
+                    </div>
+                  </div>
+                  <div class="conversation-name">Dorsin Brown</div>
+                </div>
+              </div>
+            </li>  
+            
+            
+            <li class="right ng-star-inserted">
+              <div class="conversation-list ng-star-inserted">
+                <div class="chat-avatar"><img alt=""
+                    src="assets/img/avatar.jpg"></div>
+                <div class="user-chat-content">
+                  <div class="ctext-wrap">
+                    <div class="ctext-wrap-content">
+                      <p class="mb-0"> Good morning, How are you? What about our next meeting?
+                        
+                      </p>
+                      
+                      
+                      <p class="chat-time mb-0 ng-star-inserted">
+                        <i class="fa fa-clock fa-1x"></i>
+                          <span  class="align-middle">10:02</span></p>
+                          <small title="in" class="chat-message-name">
+                          
+                            <ng-container >
+                                <ng-container >✓✓✓</ng-container>
+                            </ng-container>
+                        </small>
+                      
+                    </div>
+                    <div ngbdropdown="" class="align-self-start dropdown"><a
+                        href="#" role="button" ngbdropdowntoggle="" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i 
+                          class="fa fa-ellipse-v fa-1x"></i></a>
+                      <div ngbdropdownmenu="" class="dropdown-menu" x-placement="bottom-left">
+                        <a href="#" class="dropdown-item">Copy <i 
+                            class="ri-file-copy-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Save <i 
+                            class="ri-save-line float-right text-muted"></i></a><a href="#"
+                          class="dropdown-item">Forward <i 
+                            class="ri-chat-forward-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Delete <i 
+                            class="ri-delete-bin-line float-right text-muted"></i></a></div>
+                    </div>
+                  </div>
+                  
+                  <div class="conversation-name">Patricia Smith</div>
+                </div>
+              </div>
+              
+              
+            </li>
+            <li class="ng-star-inserted">
+              
+              <div class="chat-day-title ng-star-inserted"><span 
+                  class="title">Today</span></div>
+              
+            </li>
+            <li class="ng-star-inserted">
+              <div class="conversation-list ng-star-inserted">
+                <div class="chat-avatar"><img alt=""
+                    src="assets/img/avatar.jpg"></div>
+                <div class="user-chat-content">
+                  <div class="ctext-wrap">
+                    <div class="ctext-wrap-content">
+                      <p class="mb-0"> Yeah everything is fine
+                        
+                      </p>
+                      
+                      
+                      <p class="chat-time mb-0 ng-star-inserted"><i 
+                          class="ri-time-line align-middle"></i><span 
+                          class="align-middle">10:05</span></p>
+                      
+                    </div>
+                    <div ngbdropdown="" class="align-self-start dropdown"><a
+                        href="#" role="button" ngbdropdowntoggle="" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i 
+                          class="ri-more-2-fill"></i></a>
+                      <div ngbdropdownmenu="" class="dropdown-menu" x-placement="bottom-left">
+                        <a href="#" class="dropdown-item">Copy <i 
+                            class="ri-file-copy-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Save <i 
+                            class="ri-save-line float-right text-muted"></i></a><a href="#"
+                          class="dropdown-item">Forward <i 
+                            class="ri-chat-forward-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Delete <i 
+                            class="ri-delete-bin-line float-right text-muted"></i></a></div>
+                    </div>
+                  </div>
+                  <div class="ctext-wrap ng-star-inserted">
+                    <div class="ctext-wrap-content">
+                      <p class="mb-0"> &amp; Next meeting tomorrow 10.00AM </p>
+                      <p class="chat-time mb-0"><i 
+                          class="ri-time-line align-middle"></i><span 
+                          class="align-middle">10:05</span></p>
+                    </div>
+                    <div ngbdropdown="" class="align-self-start dropdown"><a
+                        href="#" role="button" ngbdropdowntoggle="" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i 
+                          class="ri-more-2-fill"></i></a>
+                      <div ngbdropdownmenu="" class="dropdown-menu" x-placement="bottom-left">
+                        <a href="#" class="dropdown-item">Copy <i 
+                            class="ri-file-copy-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Save <i 
+                            class="ri-save-line float-right text-muted"></i></a><a href="#"
+                          class="dropdown-item">Forward <i 
+                            class="ri-chat-forward-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Delete <i 
+                            class="ri-delete-bin-line float-right text-muted"></i></a></div>
+                    </div>
+                  </div>
+                  
+                  <div class="conversation-name">Doris Brown</div>
+                </div>
+              </div>
+              
+              
+            </li>
+            <li class="right ng-star-inserted">
+              <div class="conversation-list ng-star-inserted">
+                <div class="chat-avatar"><img alt=""
+                    src="assets/img/person.png"></div>
+                <div class="user-chat-content">
+                  <div class="ctext-wrap">
+                    <div class="ctext-wrap-content">
+                      <p class="mb-0"> Wow that's great
+                        
+                      </p>
+                      
+                      
+                      <p class="chat-time mb-0 ng-star-inserted"><i 
+                          class="ri-time-line align-middle"></i><span 
+                          class="align-middle">10:06</span></p>
+                      
+                    </div>
+                    <div ngbdropdown="" class="align-self-start dropdown"><a
+                        href="#" role="button" ngbdropdowntoggle="" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i 
+                          class="ri-more-2-fill"></i></a>
+                      <div ngbdropdownmenu="" class="dropdown-menu" x-placement="bottom-left">
+                        <a href="#" class="dropdown-item">Copy <i 
+                            class="ri-file-copy-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Save <i 
+                            class="ri-save-line float-right text-muted"></i></a><a href="#"
+                          class="dropdown-item">Forward <i 
+                            class="ri-chat-forward-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Delete <i 
+                            class="ri-delete-bin-line float-right text-muted"></i></a></div>
+                    </div>
+                  </div>
+                  
+                  <div class="conversation-name">Patricia Smith</div>
+                </div>
+              </div>
+              
+              
+            </li>
+            <li class="ng-star-inserted">
+              <div class="conversation-list ng-star-inserted">
+                <div class="chat-avatar"><img alt=""
+                    src="assets/img/person.png"></div>
+                <div class="user-chat-content">
+                  <div class="ctext-wrap">
+                    <div class="ctext-wrap-content">
+                      <p class="mb-0">
+                        
+                      </p>
+                      <ul class="list-inline message-img mb-0 ng-star-inserted">
+                        <li class="list-inline-item message-img-list ng-star-inserted">
+                          <div ><a href="#" title="Project 1"
+                              class="popup-img d-inline-block m-1"><img alt=""
+                                class="rounded border" src="assets/images/small/img-1.jpg"></a></div>
+                          <div class="message-img-link">
+                            <ul class="list-inline mb-0">
+                              <li class="list-inline-item"><a 
+                                  href="#"><i class="ri-download-2-line"></i></a></li>
+                              <li ngbdropdown="" class="list-inline-item dropdown"><a
+                                  href="#" role="button" ngbdropdowntoggle=""
+                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                  class="dropdown-toggle"><i class="ri-more-fill"></i></a>
+                                <div ngbdropdownmenu="" class="dropdown-menu"
+                                  x-placement="bottom-left"><a href="#"
+                                    class="dropdown-item">Copy <i 
+                                      class="ri-file-copy-line float-right text-muted"></i></a><a
+                                    href="#" class="dropdown-item">Save <i
+                                      class="ri-save-line float-right text-muted"></i></a><a
+                                    href="#" class="dropdown-item">Forward <i
+                                      
+                                      class="ri-chat-forward-line float-right text-muted"></i></a><a
+                                    href="#" class="dropdown-item">Delete <i
+                                      
+                                      class="ri-delete-bin-line float-right text-muted"></i></a></div>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="list-inline-item message-img-list ng-star-inserted">
+                          <div ><a href="#" title="Project 1"
+                              class="popup-img d-inline-block m-1"><img alt=""
+                                class="rounded border" src="assets/images/small/img-2.jpg"></a></div>
+                          <div class="message-img-link">
+                            <ul class="list-inline mb-0">
+                              <li class="list-inline-item"><a 
+                                  href="#"><i class="ri-download-2-line"></i></a></li>
+                              <li ngbdropdown="" class="list-inline-item dropdown"><a
+                                  href="#" role="button" ngbdropdowntoggle=""
+                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                  class="dropdown-toggle"><i class="ri-more-fill"></i></a>
+                                <div ngbdropdownmenu="" class="dropdown-menu"
+                                  x-placement="bottom-left"><a href="#"
+                                    class="dropdown-item">Copy <i 
+                                      class="ri-file-copy-line float-right text-muted"></i></a><a
+                                    href="#" class="dropdown-item">Save <i
+                                      class="ri-save-line float-right text-muted"></i></a><a
+                                    href="#" class="dropdown-item">Forward <i
+                                      
+                                      class="ri-chat-forward-line float-right text-muted"></i></a><a
+                                    href="#" class="dropdown-item">Delete <i
+                                      
+                                      class="ri-delete-bin-line float-right text-muted"></i></a></div>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        
+                      </ul>
+                      
+                      
+                      <p class="chat-time mb-0 ng-star-inserted"><i 
+                          class="ri-time-line align-middle"></i><span 
+                          class="align-middle">10:09</span></p>
+                      
+                    </div>
+                    <div ngbdropdown="" class="align-self-start dropdown"><a
+                        href="#" role="button" ngbdropdowntoggle="" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i 
+                          class="ri-more-2-fill"></i></a>
+                      <div ngbdropdownmenu="" class="dropdown-menu" x-placement="bottom-left">
+                        <a href="#" class="dropdown-item">Copy <i 
+                            class="ri-file-copy-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Save <i 
+                            class="ri-save-line float-right text-muted"></i></a><a href="#"
+                          class="dropdown-item">Forward <i 
+                            class="ri-chat-forward-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Delete <i 
+                            class="ri-delete-bin-line float-right text-muted"></i></a></div>
+                    </div>
+                  </div>
+                  
+                  <div class="conversation-name">Doris Brown</div>
+                </div>
+              </div>
+              
+              
+            </li>
+            <li class="right ng-star-inserted">
+              <div class="conversation-list ng-star-inserted">
+                <div class="chat-avatar"><img alt=""
+                    src="assets/img/person.png"></div>
+                <div class="user-chat-content">
+                  <div class="ctext-wrap">
+                    <div class="ctext-wrap-content">
+                      <p class="mb-0">
+                        
+                      </p>
+                      
+                      <div class="card p-2 mb-2 ng-star-inserted">
+                        <div class="media align-items-center">
+                          <div class="avatar-sm mr-3">
+                            <div 
+                              class="avatar-title bg-soft-primary text-primary rounded font-size-20"><i
+                                class="ri-file-text-fill"></i></div>
+                          </div>
+                          <div class="media-body">
+                            <div class="text-left">
+                              <h5 class="font-size-14 mb-1">admin_v1.0.zip</h5>
+                              <p class="text-muted font-size-13 mb-0">12.5 MB</p>
+                            </div>
+                          </div>
+                          <div class="ml-4">
+                            <ul class="list-inline mb-0 font-size-20">
+                              <li class="list-inline-item"><a href="#"
+                                  class="text-muted"><i class="ri-download-2-line"></i></a>
+                              </li>
+                              <li ngbdropdown="" class="list-inline-item dropdown"><a
+                                  href="#" ngbdropdowntoggle="" role="button"
+                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                  class="dropdown-toggle text-muted"><i 
+                                    class="ri-more-fill"></i></a>
+                                <div ngbdropdownmenu=""
+                                  class="dropdown-menu dropdown-menu-right" x-placement="bottom-left"><a
+                                    href="#" class="dropdown-item">Share <i
+                                      class="ri-share-line float-right text-muted"></i></a><a
+                                    href="#" class="dropdown-item">Delete <i
+                                      
+                                      class="ri-delete-bin-line float-right text-muted"></i></a></div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <p class="chat-time mb-0 ng-star-inserted"><i 
+                          class="ri-time-line align-middle"></i><span 
+                          class="align-middle">10:16</span></p>
+                      
+                    </div>
+                    <div ngbdropdown="" class="align-self-start dropdown"><a
+                        href="#" role="button" ngbdropdowntoggle="" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i 
+                          class="ri-more-2-fill"></i></a>
+                      <div ngbdropdownmenu="" class="dropdown-menu" x-placement="bottom-left">
+                        <a href="#" class="dropdown-item">Copy <i 
+                            class="ri-file-copy-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Save <i 
+                            class="ri-save-line float-right text-muted"></i></a><a href="#"
+                          class="dropdown-item">Forward <i 
+                            class="ri-chat-forward-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Delete <i 
+                            class="ri-delete-bin-line float-right text-muted"></i></a></div>
+                    </div>
+                  </div>
+                  
+                  <div class="conversation-name">Patricia Smith</div>
+                </div>
+              </div>
+              
+              
+            </li>
+            <li class="ng-star-inserted">
+              <div class="conversation-list ng-star-inserted">
+                <div class="chat-avatar"><img alt=""
+                    src="assets/img/avatar.jpg"></div>
+                <div class="user-chat-content">
+                  <div class="ctext-wrap">
+                    <div class="ctext-wrap-content">
+                      <p class="mb-0"> typing <span 
+                          class="animate-typing ng-star-inserted"><span 
+                            class="dot ml-1"></span><span class="dot ml-1"></span><span
+                            class="dot ml-1"></span></span>
+                        
+                      </p>
+                      
+                      
+                      
+                    </div>
+                    <div ngbdropdown="" class="align-self-start dropdown"><a
+                        href="#" role="button" ngbdropdowntoggle="" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i 
+                          class="ri-more-2-fill"></i></a>
+                      <div ngbdropdownmenu="" class="dropdown-menu" x-placement="bottom-left">
+                        <a href="#" class="dropdown-item">Copy <i 
+                            class="ri-file-copy-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Save <i 
+                            class="ri-save-line float-right text-muted"></i></a><a href="#"
+                          class="dropdown-item">Forward <i 
+                            class="ri-chat-forward-line float-right text-muted"></i></a><a 
+                          href="#" class="dropdown-item">Delete <i 
+                            class="ri-delete-bin-line float-right text-muted"></i></a></div>
+                    </div>
+                  </div>
+                  
+                  <div class="conversation-name">Doris Brown</div>
+                </div>
+              </div>
+              
+              
+            </li> -->
+          </ul>
+  
+
+
+        <!-- <div class="chat-messages-empty" *ngIf="contact.messages.length === 0">
+            {{chatService.translations.noMessages}}
+        </div> -->
+      </div>
+
+
+
+      <!---->
+      <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+        <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+      </div>
+      <div class="ps__rail-y" style="top: 0px; height: 310px; right: 0px;">
+        <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 86px;"></div>
+      </div>
+    </div>
+</perfect-scrollbar>
+</div>

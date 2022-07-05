@@ -1,0 +1,75 @@
+<!-- <div class="media">
+    <div [ngClass]="{
+        'chat-user-img align-self-center mr-3 online':contact.isOnline === true,
+        'chat-user-img align-self-center mr-3':contact.isOnline === false 
+      }">
+      <div *ngIf="contact.avatar">
+        <img alt="" class="rounded-circle avatar-xs ng-star-inserted" src="{{contact.avatar}}">
+        <span class="user-status ng-star-inserted"></span>
+      </div>
+      <div *ngIf="!contact.avatar">
+        <div class="avatar-xs ng-star-inserted">
+          <span class="avatar-title rounded-circle bg-soft-primary text-primary"> D </span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="media-body overflow-hidden">
+      <h5 class="text-truncate font-size-15 mb-1">{{contact.displayName}}</h5>
+      <p class="chat-user-message text-truncate mb-0">
+        Hey! there I'm available</p>
+    </div>
+    <div class="font-size-11">
+      {{contact.lastSeen  | date : 'HH:mm'}}
+    </div>
+    <div class="unread-message">
+      <div *ngIf="contact.unread>0">
+        {{contact.unread}}
+      </div>
+      <span class="badge badge-soft-danger badge-pill"></span>
+    </div>
+  </div> -->
+  
+
+  <li  [ngClass]="{
+    'typing ng-star-inserted':contact.isTyping === true,
+    'ng-star-inserted':contact.isTyping === false 
+  }">
+    <a (click)="selectContact(contact)">
+      <div class="media">
+        <div [ngClass]="{
+            'chat-user-img align-self-center mr-3 online':contact.isOnline === true,
+            'chat-user-img align-self-center mr-3':contact.isOnline === false 
+          }">
+          <div *ngIf="contact.avatar">
+            <img alt="" class="rounded-circle avatar-xs ng-star-inserted" src="{{contact.avatar}}">
+            <span class="user-status ng-star-inserted"></span>
+          </div>
+          <div *ngIf="!contact.avatar">
+            <div class="avatar-xs ng-star-inserted">
+              <span class="avatar-title rounded-circle bg-soft-primary text-primary"> D </span>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="media-body overflow-hidden">
+          <h5 class="text-truncate font-size-15 mb-1">{{contact.displayName}}</h5>
+          <p class="chat-user-message text-truncate mb-0">
+            Hey! there I'm available</p>
+        </div>
+        <div class="font-size-11">
+          {{contact.lastSeen  | date : 'HH:mm'}}
+        </div>
+        <div class="unread-message">
+          <div *ngIf="contact.unread>0">
+            {{contact.unread}}
+          </div>
+          <span class="badge badge-soft-danger badge-pill"></span>
+        </div>
+      </div>
+    </a>
+ </li>

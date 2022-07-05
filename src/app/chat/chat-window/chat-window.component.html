@@ -1,0 +1,47 @@
+<div id="chat-room" class="user-chat w-100">
+  <div class="d-lg-flex">
+    <div class="w-100" >  
+    
+      <div  *ngIf="selectedContact" >
+          <!-- chat header  -->     
+        <app-chat-header [contact]="selectedContact"> </app-chat-header>
+        <!-- chat list  -->
+          <!-- 
+            <app-chat-message-list> </app-chat-message-list>
+          -->
+        <app-chat-message-list [contact]="selectedContact"></app-chat-message-list>
+        <!-- chat input box  -->
+        <div class="p-3 p-lg-4 border-top mb-0">
+          <!-- <app-chat-message-input [contact]="chatWindowState.contact"></app-chat-message-input> -->
+          <app-chat-message-input [contact]="selectedContact"></app-chat-message-input>
+            <div *ngFor="let action of chatservice.chatActions"
+                 (click)="onActionClick(action)"
+                 class="chat-action"
+                 [ngClass]="action.cssClass"
+                 [innerHTML]="action.html">
+            </div>
+        </div> 
+        <app-roster-profile></app-roster-profile>
+
+      </div>
+      
+     <div class="single-thread-empty" *ngIf="!selectedContact" fxLayout="column"  fxFlexFill fxLayoutAlign="center center" style="background: #f7f9fa;">
+        
+            <img [src]='imageInit' alt="" />
+            <h2> Keep your phone connected</h2>
+            <p style="text-align: center">TalkingDrum connects to your phone to sync messages. To reduce data usage, connect your phone to Wi-Fi.</p>
+            <p>TalkingDrum is available on mobile <a href="googleplay.com/lunna" target="_blank">Get it here </a></p> 
+            <hr />
+
+
+      </div>   
+
+
+      
+
+
+
+    </div> 
+  </div>
+</div>
+

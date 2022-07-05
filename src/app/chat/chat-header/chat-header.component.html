@@ -1,0 +1,59 @@
+<div class="p-3 p-lg-4 border-bottom">
+  <div class="row align-items-center">
+
+    <div class="col-sm-4 col-8">
+      <div class="media align-items-center">
+        <div class="d-block d-lg-none mr-2">
+          <a href="javascript: void(0);" class="user-chat-remove text-muted font-size-16 p-2">
+            <i class="ri-arrow-left-s-line"></i>
+          </a>
+        </div>
+        <div class="mr-3"> 
+            <img src="{{selectedContact.avatar}}" alt="" class="rounded-circle avatar-xs">
+          </div>
+        <div class="media-body overflow-hidden">
+          <h5 class="font-size-16 mb-0 text-truncate">
+              <a class="text-reset user-profile-show">{{contact.displayName}} &times;</a>
+              <i class="ri-record-circle-fill font-size-10 text-success d-inline-block ml-1"></i></h5>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-8 col-4">
+      <ul class="list-inline user-chat-nav text-right mb-0">
+        <li class="list-inline-item">
+          <div class="dropdown"><button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              class="dropdown-toggle btn nav-btn"><i class="fa fa-search"></i></button>
+            <div class="dropdown-menu p-0 dropdown-menu-right dropdown-menu-md" x-placement="bottom-left">
+              <div class="search-box p-2"><input type="text" class="form-control bg-light border-0"
+                  placeholder="Search.."></div>
+            </div>
+          </div>
+        </li>
+        <li class="list-inline-item d-none d-lg-inline-block">
+          <button type="button" class="btn nav-btn user-profile-show">
+            <i class="fa fa-paperclip"></i>
+          </button>
+        </li>
+        <li class="list-inline-item">
+          <div ngbDropdown class="dropdown">
+
+            <button class="btn" id="dropdownBasic2" ngbDropdownToggle>
+              <i class="fa fa-ellipsis-v"></i>
+            </button>
+            <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right" x-placement="bottom-left">
+              <a href="javascript: void(0);" class="dropdown-item d-block  user-profile-show">View Profile <i
+                  class="ri-user-2-line float-right text-muted"></i>
+              </a>
+              <a href="#" class="dropdown-item">Archive <i class="ri-archive-line float-right text-muted"></i></a>
+              <a href="#" class="dropdown-item">Muted <i class="ri-volume-mute-line float-right text-muted"></i></a>
+              <a href="#" class="dropdown-item">Delete <i class="ri-delete-bin-line float-right text-muted"></i></a>
+            </div>
+          </div>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="layout-wrapper d-lg-flex">
+  <app-roster-window fxFlex="20" fxLayout="column">
+
+  </app-roster-window>
+  <!-- <app-roster-profile  fxFlex="20" fxLayout="column"></app-roster-profile> -->
+  <app-chat-window fxFlex="80" fxLayout="column">
+
+  </app-chat-window>
+  <app-chat-filedrop [enabled]="fileDropEnabled"
+        (fileUpload)="fileDrop.emit($event)"
+        [dropMessage]="fileDropMessageKey">
+        <ng-content></ng-content>
+       </app-chat-filedrop>
+</div>

@@ -1,0 +1,102 @@
+<div class="chat-leftsidebar mr-lg-1">
+  <div class="tab-content">
+    <!---->
+    <div *ngIf = "isShowProfile==true">
+        <div id="profile-detail" class="user-profile-sidebar">
+          <div class="px-3 px-lg-4 pt-3 pt-lg-4">
+            <div class="user-chat-nav text-right">
+              <button type="button" id="user-profile-hide" (click)="closeShowProfile()" class="btn nav-btn">
+                <i class="fa fa-close fa-fw"></i></button>
+            </div>
+          </div>
+        <app-roster-profile></app-roster-profile>
+      </div>
+    </div> 
+    
+
+   
+      <div *ngIf = "isShowProfile==false && isNewChat==false">
+        <!--#>> Start contact roster Owner-->
+       
+        <div  class="px-4 pt-4">
+          <div  class="media">
+             <div  class="chat-user-img align-self-center mr-3 away">
+               <img alt="" class="rounded-circle avatar-xs ng-star-inserted" src="assets/img/avatar.jpg">                     
+             </div>
+             <div  class="media-body overflow-hidden">
+               &nbsp;
+             </div>
+             <div  class="unread-message"> 
+      
+              <div class="col">
+                <ul class="list-inline user-chat-nav text-right mb-0">      
+                  <li class="list-inline-item d-none d-lg-inline-block">
+                    <button type="button" class="btn nav-btn user-profile-show">
+                      <i class="fa fa-search fa-fw "></i>
+                    </button>
+                  </li>
+                  
+                  <li class="list-inline-item d-none d-lg-inline-block">
+                    <button type="button"  (click)="openIsNewChat()" class="btn nav-btn user-profile-show">
+                      <i class="fa fa-envelope-o fa-fw "></i>
+                    </button>
+                  </li>
+      
+                  <li class="list-inline-item">
+                    <div ngbDropdown class="dropdown">
+          
+                      <button class="btn" id="dropdownBasic2" ngbDropdownToggle>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </button>
+                      <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right" x-placement="bottom-left">
+                        <button type="button"  (click)="openShowProfile()" class="dropdown-item d-block  user-profile-show">View Profile</button > 
+                        <a   (click)="openShowProfile()" class="dropdown-item">New Group</a>
+                        <a href="#" class="dropdown-item">Create Room</a>
+                        <a href="#" class="dropdown-item">Archived</a>
+                        <a href="#" class="dropdown-item">Starred</a>
+                        <a href="#" class="dropdown-item">Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">Logout</a>         
+                      </div>
+                    </div>
+                  </li>
+                
+                </ul>
+              </div>
+             </div> 
+       
+         </div>        
+       </div>
+
+
+
+
+
+        <!-- <app-roster-owner></app-roster-owner> -->
+        <!--#<< Eend contact roster Owner-->
+
+
+        <!--#>> Start contact roster list search window-->
+        <app-roster-search-window></app-roster-search-window>
+        <!--#<< Eend contact roster list search window-->
+
+
+        <!--#>> Start  contact roster list-->
+        <app-roster-list></app-roster-list>
+        <!--#<< End  contact roster list-->
+      </div>
+    <!-- <app-profile> </app-profile> -->
+    <div *ngIf = "isNewChat==true">      
+      <div id="profile-detail" class="user-profile-sidebar">
+        <div class="px-3 px-lg-4 pt-3 pt-lg-4">
+          <div class="user-chat-nav text-right">
+            <button type="button" id="user-profile-hide" (click)="closeIsNewChat()" class="btn nav-btn">
+              <i class="fa fa-close fa-fw"></i></button>
+          </div>
+        </div>
+        <app-roster-new-chat> </app-roster-new-chat> 
+    </div>
+    </div>
+     
+  </div>
+</div>

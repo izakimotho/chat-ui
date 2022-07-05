@@ -1,0 +1,29 @@
+.single-thread-empty {
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    padding: 40px;
+    color: #888b85;
+    height: auto;
+    padding: 20px;
+    width: 100%;
+    min-height: 850px;
+    bottom:0;
+}
+
+.single-thread-empty h2 {
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    color: #303030;
+    border-bottom: 2px solid #888b85;
+    font-size: 32px;
+    margin: 15px 0px 5px 0px;
+  }
+
+  .emptybox {    
+    height: 850px;
+    min-height: 650px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    direction: column;
+    padding: 20px;
+    padding: 20px;
+    margin: 15px 0px 5px 0px;
+  }

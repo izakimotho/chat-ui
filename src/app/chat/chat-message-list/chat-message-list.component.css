@@ -1,0 +1,6 @@
+.chat-messages {
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    hyphens: none;
+  }
+  

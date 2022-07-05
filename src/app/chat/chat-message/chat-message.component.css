@@ -1,0 +1,6 @@
+.chat-message-image-wrapper {
+	max-width: 100%;
+	height: auto;
+	margin: 0.5em;
+	/* img { width: 100%;} */
+}

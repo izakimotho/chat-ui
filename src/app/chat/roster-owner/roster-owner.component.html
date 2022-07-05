@@ -1,0 +1,72 @@
+<div  class="px-4 pt-4">
+    <div  class="media">
+       <div  class="chat-user-img align-self-center mr-3 away">
+         <img alt="" class="rounded-circle avatar-xs ng-star-inserted" src="assets/img/avatar.jpg">                     
+       </div>
+       <div  class="media-body overflow-hidden">
+         &nbsp;
+       </div>
+       <div  class="unread-message"> 
+
+        <div class="col">
+          <ul class="list-inline user-chat-nav text-right mb-0">
+            <!-- <li class="list-inline-item">
+              <div class="dropdown"><button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                  class="dropdown-toggle btn nav-btn"><i class="fa fa-search"></i></button>
+                <div class="dropdown-menu p-0 dropdown-menu-right dropdown-menu-md" x-placement="bottom-left">
+                  <div class="search-box p-2"><input type="text" class="form-control bg-light border-0"
+                      placeholder="Search.."></div>
+                </div>
+              </div>
+            </li> -->
+
+            <li class="list-inline-item d-none d-lg-inline-block">
+              <button type="button" class="btn nav-btn user-profile-show">
+                <i class="fa fa-search fa-fw "></i>
+              </button>
+            </li>
+            
+            <li class="list-inline-item d-none d-lg-inline-block">
+              <button type="button" class="btn nav-btn user-profile-show">
+                <i class="fa fa-envelope-o fa-fw "></i>
+              </button>
+            </li>
+
+            <li class="list-inline-item">
+              <div ngbDropdown class="dropdown">
+    
+                <button class="btn" id="dropdownBasic2" ngbDropdownToggle>
+                  <i class="fa fa-ellipsis-v"></i>
+                </button>
+                <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right" x-placement="bottom-left">
+                  <button type="button"  (click)="selectProfile()" class="dropdown-item d-block  user-profile-show">View Profile</button > 
+                  <a   (click)="selectProfile()" class="dropdown-item">New Group</a>
+                  <a href="#" class="dropdown-item">Create Room</a>
+                  <a href="#" class="dropdown-item">Archived</a>
+                  <a href="#" class="dropdown-item">Starred</a>
+                  <a href="#" class="dropdown-item">Settings</a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#" class="dropdown-item">Logout</a>         
+                </div>
+              </div>
+            </li>
+          
+          </ul>
+        </div>
+       </div> 
+ 
+   </div>
+
+   <ng-template #content let-modal> 
+  
+
+
+    <app-roster-profile></app-roster-profile>
+  </ng-template> 
+  
+  <button class="btn btn-lg btn-outline-primary"
+    (click)="open(content)"> 
+    Popup using Angular and Bootstrap 
+  </button> 
+  
+ </div>

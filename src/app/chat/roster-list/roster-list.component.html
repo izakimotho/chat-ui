@@ -1,0 +1,254 @@
+ 
+<div class="px-2" >
+  <h5 class="mb-3 px-3 font-size-16">Contacts</h5>
+  <perfect-scrollbar class="chat-message-list chat-contact-list">
+    <div style="position: static;" class="ps ps--active-y">
+      <div class="ps-content" >
+        <!-- <ul class="list-unstyled chat-list chat-user-list" style=" border-bottom:1px solid #70120b;"> -->
+        <ul class="list-unstyled chat-list chat-user-list" >
+         
+            <app-roster-contact *ngFor="let contact of (contacts )"
+                                     [contact]="contact"
+                                     (click)="selectContact(contact)">
+            </app-roster-contact>
+         
+
+         <!--
+          <li class="ng-star-inserted"><a href="#">
+              <div class="media">
+                <div class="chat-user-img align-self-center mr-3 online"><img alt=""
+                    class="rounded-circle avatar-xs ng-star-inserted" src="assets/img/person.png">
+
+                  <span class="user-status ng-star-inserted"></span>
+
+                </div>
+                <div class="media-body overflow-hidden">
+                  <h5 class="text-truncate font-size-15 mb-1">Bellafonte Mziki</h5>
+
+                  <p class="chat-user-message text-truncate mb-0">Hey! there I'm
+                    available</p>
+                </div>
+                <div class="font-size-11">05 min</div>
+                <div class="unread-message"><span class="badge badge-soft-danger badge-pill"></span></div>
+              </div>
+            </a></li>
+
+          
+          
+
+
+          <li class="ng-star-inserted"><a href="#">
+              <div class="media">
+                <div class="chat-user-img align-self-center mr-3 away"><img alt=""
+                    class="rounded-circle avatar-xs ng-star-inserted" src="assets/img/person.png">
+
+                  <span class="user-status ng-star-inserted"></span>
+
+                </div>
+                <div class="media-body overflow-hidden">
+                  <h5 class="text-truncate font-size-15 mb-1">Mark Anders</h5>
+
+                  <p class="chat-user-message text-truncate mb-0">Images</p>
+                </div>
+                <div class="font-size-11">12 min</div>
+                <div class="unread-message"><span class="badge badge-soft-danger badge-pill">02</span></div>
+              </div>
+            </a></li>
+          <li class="ng-star-inserted"><a href="#">
+              <div class="media">
+                <div class="chat-user-img align-self-center mr-3">
+
+                  <div class="avatar-xs ng-star-inserted"><span
+                      class="avatar-title rounded-circle bg-soft-primary text-primary"> G </span></div>
+
+
+                </div>
+                <div class="media-body overflow-hidden">
+                  <h5 class="text-truncate font-size-15 mb-1">General Toast</h5>
+
+                  <p class="chat-user-message text-truncate mb-0">This theme is
+                    awesome!</p>
+                </div>
+                <div class="font-size-11">20 min</div>
+                <div class="unread-message"><span class="badge badge-soft-danger badge-pill"></span></div>
+              </div>
+            </a></li>
+          <li class="active ng-star-inserted"><a href="#">
+              <div class="media">
+                <div class="chat-user-img align-self-center mr-3 online"><img alt=""
+                    class="rounded-circle avatar-xs ng-star-inserted" src="assets/img/avatar.jpg">
+
+                  <span class="user-status ng-star-inserted"></span>
+
+                </div>
+                <div class="media-body overflow-hidden">
+                  <h5 class="text-truncate font-size-15 mb-1">Stefa No</h5>
+
+                  <p class="chat-user-message text-truncate mb-0">Nice to meet you</p>
+                </div>
+                <div class="font-size-11">10:12 AM</div>
+                <div class="unread-message"><span class="badge badge-soft-danger badge-pill"></span></div>
+              </div>
+            </a></li>
+          <li class="ng-star-inserted"><a href="#">
+              <div class="media">
+                <div class="chat-user-img align-self-center mr-3">
+
+                  <div class="avatar-xs ng-star-inserted"><span
+                      class="avatar-title rounded-circle bg-soft-primary text-primary"> D </span>
+                  </div>
+
+
+                </div>
+                <div class="media-body overflow-hidden">
+                  <h5 class="text-truncate font-size-15 mb-1">Designer</h5>
+
+                  <p class="chat-user-message text-truncate mb-0">Next meeting
+                    tomorrow 10:00AM</p>
+                </div>
+                <div class="font-size-11">12:01 PM</div>
+                <div class="unread-message"><span class="badge badge-soft-danger badge-pill">01</span></div>
+              </div>
+            </a></li>
+          <li class="ng-star-inserted"><a href="#">
+              <div class="media">
+                <div class="chat-user-img align-self-center mr-3 away"><img alt=""
+                    class="rounded-circle avatar-xs ng-star-inserted" src="assets/img/person.png">
+
+                  <span class="user-status ng-star-inserted"></span>
+
+                </div>
+                <div class="media-body overflow-hidden">
+                  <h5 class="text-truncate font-size-15 mb-1">James John the King</h5>
+
+                  <p class="chat-user-message text-truncate mb-0">Admin-A.zip</p>
+                </div>
+                <div class="font-size-11">03:20 PM</div>
+                <div class="unread-message"><span class="badge badge-soft-danger badge-pill"></span></div>
+              </div>
+            </a></li>
+          <li class=" ng-star-inserted"><a href="#">
+              <div class="media">
+                <div class="chat-user-img align-self-center mr-3 online">
+
+                  <div class="avatar-xs ng-star-inserted"><span
+                      class="avatar-title rounded-circle bg-soft-primary text-primary"> A </span></div>
+                  <span class="user-status ng-star-inserted"></span>
+
+                </div>
+                <div class="media-body overflow-hidden">
+                  <h5 class="text-truncate font-size-15 mb-1">Tom Toast</h5>
+                  <p class="chat-user-message text-truncate mb-0 ng-star-inserted">
+                    typing<span class="animate-typing"><span class="dot ml-1"></span><span class="dot ml-1"></span><span
+                        class="dot ml-1"></span></span></p>
+
+                  <p class="chat-user-message text-truncate mb-0"></p>
+                </div>
+                <div class="font-size-11">04:56 PM</div>
+                <div class="unread-message"><span class="badge badge-soft-danger badge-pill"></span></div>
+              </div>
+            </a></li>
+          <li class="ng-star-inserted"><a href="#">
+              <div class="media">
+                <div class="chat-user-img align-self-center mr-3 online">
+
+                  <div class="avatar-xs ng-star-inserted"><span
+                      class="avatar-title rounded-circle bg-soft-primary text-primary"> M </span></div>
+                  <span class="user-status ng-star-inserted"></span>
+
+                </div>
+                <div class="media-body overflow-hidden">
+                  <h5 class="text-truncate font-size-15 mb-1">George jijo</h5>
+
+                  <p class="chat-user-message text-truncate mb-0">Yeah everything is
+                    fine</p>
+                </div>
+                <div class="font-size-11">12/07</div>
+                <div class="unread-message"><span class="badge badge-soft-danger badge-pill"></span></div>
+              </div>
+            </a></li>
+          <li class="ng-star-inserted"><a href="#">
+              <div class="media">
+                <div class="chat-user-img align-self-center mr-3 away"><img alt=""
+                    class="rounded-circle avatar-xs ng-star-inserted" src="assets/img/person.png">
+
+                  <span class="user-status ng-star-inserted"></span>
+
+                </div>
+                <div class="media-body overflow-hidden">
+                  <h5 class="text-truncate font-size-15 mb-1">Paul Kobia</h5>
+
+                  <p class="chat-user-message text-truncate mb-0">Good morning</p>
+                </div>
+                <div class="font-size-11">12/07</div>
+                <div class="unread-message"><span class="badge badge-soft-danger badge-pill"></span></div>
+              </div>
+            </a></li>
+          <li class="ng-star-inserted"><a href="#">
+              <div class="media">
+                <div class="chat-user-img align-self-center mr-3 online">
+
+                  <div class="avatar-xs ng-star-inserted"><span
+                      class="avatar-title rounded-circle bg-soft-primary text-primary"> J </span></div>
+                  <span class="user-status ng-star-inserted"></span>
+
+                </div>
+                <div class="media-body overflow-hidden">
+                  <h5 class="text-truncate font-size-15 mb-1">Jonathan Gikash</h5>
+
+                  <p class="chat-user-message text-truncate mb-0">Hi, How are you?</p>
+                </div>
+                <div class="font-size-11">12/07</div>
+                <div class="unread-message"><span class="badge badge-soft-danger badge-pill"></span></div>
+              </div>
+            </a></li>
+          <li class="ng-star-inserted"><a href="#">
+              <div class="media">
+                <div class="chat-user-img align-self-center mr-3 away"><img alt=""
+                    class="rounded-circle avatar-xs ng-star-inserted" src="assets/img/person.png">
+
+                  <span class="user-status ng-star-inserted"></span>
+
+                </div>
+                <div class="media-body overflow-hidden">
+                  <h5 class="text-truncate font-size-15 mb-1">Ozzie Man</h5>
+
+                  <p class="chat-user-message text-truncate mb-0">I've finished it!
+                    See you so</p>
+                </div>
+                <div class="font-size-11">11/07</div>
+                <div class="unread-message"><span class="badge badge-soft-danger badge-pill"></span></div>
+              </div>
+            </a></li>
+          <li class="ng-star-inserted"><a href="#">
+              <div class="media">
+                <div class="chat-user-img align-self-center mr-3 online">
+
+                  <div class="avatar-xs ng-star-inserted"><span
+                      class="avatar-title rounded-circle bg-soft-primary text-primary"> S </span></div>
+                  <span class="user-status ng-star-inserted"></span>
+
+                </div>
+                <div class="media-body overflow-hidden">
+                  <h5 class="text-truncate font-size-15 mb-1">Sara Muganda</h5>
+
+                  <p class="chat-user-message text-truncate mb-0">Wow that's great</p>
+                </div>
+                <div class="font-size-11">11/07</div>
+                <div class="unread-message"><span class="badge badge-soft-danger badge-pill"></span></div>
+              </div>
+            </a></li>
+ -->
+
+
+        </ul>
+      </div>
+      <!-- <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+        <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+      </div>
+      <div class="ps__rail-y" style="top: 0px; height: 262px; right: 0px;">
+        <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 77px;"></div>
+      </div> -->
+    </div>
+  </perfect-scrollbar>
+</div>
